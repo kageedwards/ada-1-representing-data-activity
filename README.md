@@ -159,11 +159,11 @@ right before moving to the next.
 If you finished writing `list_event_types` and `total_attendance`, work on implementing the
 functions below for additional practice.
 
-3. `most_popular_event_type(conference_data)`: return the event type with the most total
+3. `get_scholarship_attendees(conference_data, year)`: return a list of names of attendees who
+   used a scholarship ticket (i.e. their tier isn't `None`) in a given year.
+4. `most_popular_event_type(conference_data)`: return the event type with the most total
    sign-ups across all years. This one needs a loop inside a loop, since you have to add up
    counts across every year.
-4. `get_scholarship_attendees(conference_data, year)`: return a list of names of attendees who
-   used a scholarship ticket (i.e. their tier isn't `None`) in a given year.
 
 ## Running your code
 
@@ -179,12 +179,3 @@ function, re-run the file — the output updates automatically to show your real
 The nested `conference_data` structure gets printed with `pprint` (short for "pretty print"), a
 built-in Python function that lays out nested dictionaries and lists one piece at a time instead
 of jamming everything onto one line — much easier to read while you're checking your work.
-
-## Checking your work
-
-Once you're done, you can compare your implementation against
-a fully worked solution on the `solution` branch:
-
-```bash
-git checkout solution
-```

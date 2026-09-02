@@ -49,15 +49,14 @@ def total_attendance(conference_data, year):
     """Part B, Q2: Return the total number of sign-ups (all event types) for a given year."""
     pass
 
+def get_scholarship_attendees(conference_data, year):
+    """Part B, Q3: Return a list of names of attendees who used a scholarship ticket in a given year."""
+    pass
 
 def most_popular_event_type(conference_data):
-    """Part B, Q3: Return the event type with the most total sign-ups across all years."""
+    """Part B, Q4: Return the event type with the most total sign-ups across all years."""
     pass
 
-
-def get_scholarship_attendees(conference_data, year):
-    """Part B, Q4: Return a list of names of attendees who used a scholarship ticket in a given year."""
-    pass
 
 
 if __name__ == "__main__":
@@ -67,5 +66,5 @@ if __name__ == "__main__":
 
     print("2021 event types:", list_event_types(conference_data, 2021))
     print("2023 total attendance:", total_attendance(conference_data, 2023))
-    print("Most popular event type:", most_popular_event_type(conference_data))
     print("2024 scholarship attendees:", get_scholarship_attendees(conference_data, 2024))
+    print("Most popular event type:", most_popular_event_type(conference_data))
