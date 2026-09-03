@@ -37,25 +37,90 @@ def reshape_conference_data(registrations):
     Example:
         conference_data[2021]["long talk"] -> [("Priya", None)]
     """
-    pass
+    output = {}
+    for registration in registrations:
+        year = registration["year"]
+        event_type = registration["event_type"]
+
+        # Add a dictionary for this year in needed
+        if year not in output: 
+            output[year] = {}
+
+        # Add an inner list for this event type in needed
+        if event_type not in output[year]:
+            output[year][event_type] = []
+
+        # Add a tuple to the [year][event_type] inner list
+        inner_item = ( registration["attendee"], registration["scholarship_tier"] )
+        output[year][event_type].append(inner_item)
+
+    return output
+
+
+    # for registration in registrations:
+    #     for key, item in registration.items():
+    #         if not output[year]:
+    #             output[year] = {}
+
+    #         if not output[year][event]
 
 
 def list_event_types(conference_data, year):
     """Part B, Q1: Return a list of every event type offered in a given year."""
-    pass
+    output = []
+
+    for key, event in conference_data.items():
+        for event_type, attendees in event.items():
+            if key == year:
+                output.append(event_type)
+
+    return output
 
 
 def total_attendance(conference_data, year):
     """Part B, Q2: Return the total number of sign-ups (all event types) for a given year."""
-    pass
+    output = {}
+
+    for event_type, attendees in conference_data[year].items():
+        if event_type not in output:
+            output[event_type] = 0
+
+        output[event_type] += len(attendees)
+
+    return output
 
 def get_scholarship_attendees(conference_data, year):
     """Part B, Q3: Return a list of names of attendees who used a scholarship ticket in a given year."""
-    pass
+    output = {}
+    
+    for event_type, attendees in conference_data[year].items():
+        for (name, scholarship) in attendees:
+            if scholarship:
+                if scholarship not in output:
+                            output[scholarship] = []
+
+                if name not in output[scholarship]:
+                    output[scholarship].append(name)
+
+    return output
 
 def most_popular_event_type(conference_data):
     """Part B, Q4: Return the event type with the most total sign-ups across all years."""
-    pass
+    output = {}
+    highest_value = 0
+
+    # Iterating over each year, but we don't need to access the year
+    for year, event in conference_data.items():
+        # For each event type in this year's sign-ups...
+        for event_type, attendees in event.items():
+            # Start a count if we don't have event type in the dict yet
+            if event_type not in output:
+                output[event_type] = 0
+
+            # Add the number of sign-ups for this year / event_type
+            output[event_type] += len(attendees)
+
+    return output
 
 
 
