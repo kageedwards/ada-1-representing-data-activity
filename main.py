@@ -107,7 +107,6 @@ def get_scholarship_attendees(conference_data, year):
 def most_popular_event_type(conference_data):
     """Part B, Q4: Return the event type with the most total sign-ups across all years."""
     output = {}
-    highest_value = 0
 
     # Iterating over each year, but we don't need to access the year
     for year, event in conference_data.items():
