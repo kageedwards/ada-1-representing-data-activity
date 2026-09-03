@@ -6,6 +6,9 @@ Run this file from your terminal with:
 
 As you implement each function below, its print statement at the bottom of
 this file will start showing real output instead of None.
+
+Co-Contributors:
+Annie Chang, Valerie Chon, Kage Edwards
 """
 
 from pprint import pprint
